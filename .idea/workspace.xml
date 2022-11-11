@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="master">
-      <change afterPath="$PROJECT_DIR$/students/female/alina.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/female/kseniya.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/female/lilia.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/male/bogdan.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/male/dima.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/male/katya.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/male/masha.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/male/orest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/students/sortStudents.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-    </list>
+    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="lesson1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,7 +68,7 @@
       <updated>1668073011889</updated>
       <workItem from="1668073013436" duration="7379000" />
       <workItem from="1668081157760" duration="6949000" />
-      <workItem from="1668151059173" duration="1970000" />
+      <workItem from="1668151059173" duration="3055000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <created>1668073194109</created>
@@ -89,7 +77,21 @@
       <option name="project" value="LOCAL" />
       <updated>1668073194109</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="1">
+      <created>1668153259784</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668153259784</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lesson1">
+      <created>1668154140145</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668154140145</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,7 +110,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="master" />
-    <option name="LAST_COMMIT_MESSAGE" value="master" />
+    <MESSAGE value="1" />
+    <MESSAGE value="lesson1" />
+    <option name="LAST_COMMIT_MESSAGE" value="lesson1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
