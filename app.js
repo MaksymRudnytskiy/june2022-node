@@ -1,19 +1,6 @@
 const fs = require('node:fs')
-const sort = require('./students/sortStudents')
-const {maleSort, femaleSort} = require("./students/sortStudents");
+const sort = require('./sortStudents')
+const {maleSort, femaleSort} = require("./sortStudents");
 
 maleSort()
 femaleSort()
-
-
-
-
-
-
-
-
-
-
-
-
-
