@@ -1,0 +1,122 @@
+Index: app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app.js b/app.js
+--- a/app.js	
++++ b/app.js	
+@@ -1,6 +1,7 @@
+ const express = require('express')
+ const fs = require('fs/promises')
+ const path = require("path");
++const mongoose = require("mongoose")
+ 
+ require('dotenv').config()
+ 
+@@ -21,7 +22,8 @@
+     console.log('Welcome')
+ })
+ 
+-app.listen(configs.PORT, () => {
++app.listen(configs.PORT, async () => {
++    await mongoose.connect(configs.MONGO_URL)
+     console.log(`Server listen ${process.env.PORT}`)
+ })
+ 
+Index: dataBase/User.js
+===================================================================
+diff --git a/dataBase/User.js b/dataBase/User.js
+new file mode 100644
+--- /dev/null	
++++ b/dataBase/User.js	
+@@ -0,0 +1,11 @@
++const {Schema, model} = require('mongoose')
++
++const userSchema = new Schema({
++    name: {type: String, require: true, default: ''},
++    email: {type: String, require: true, trim: true, lowercase: true},
++    age: {type: Number, default: 18}
++},{
++    timestamps: true
++})
++
++module.exports = model('User', userSchema)
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,15 +4,14 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="lesson 2 +">
+-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/controller/user.controller.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/middleware/user.middleware.js" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/router/user.router.js" afterDir="false" />
++    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="lesson 3">
++      <change afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.controller.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -29,7 +28,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="lesson2" />
++        <entry key="$PROJECT_DIR$" value="lesson3" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -71,6 +70,11 @@
+       <workItem from="1668845906424" duration="20733000" />
+       <workItem from="1669206742452" duration="95000" />
+       <workItem from="1669491560013" duration="67000" />
++      <workItem from="1669557895784" duration="3926000" />
++      <workItem from="1669635714250" duration="1765000" />
++      <workItem from="1669651906490" duration="712000" />
++      <workItem from="1669652699720" duration="2053000" />
++      <workItem from="1669734625477" duration="595000" />
+     </task>
+     <task id="LOCAL-00001" summary="lesson 2 start">
+       <created>1668875097512</created>
+@@ -79,7 +83,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1668875097512</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="lesson 3">
++      <created>1669557998039</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1669557998039</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -98,6 +109,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="lesson 2 start" />
+-    <option name="LAST_COMMIT_MESSAGE" value="lesson 2 start" />
++    <MESSAGE value="lesson 3" />
++    <option name="LAST_COMMIT_MESSAGE" value="lesson 3" />
+   </component>
+ </project>
+\ No newline at end of file

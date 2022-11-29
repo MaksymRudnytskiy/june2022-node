@@ -1,0 +1,58 @@
+Index: config/config.js
+===================================================================
+diff --git a/config/config.js b/config/config.js
+--- a/config/config.js	
++++ b/config/config.js	
+@@ -1,4 +1,5 @@
+ module.exports = {
+     PORT: process.env.PORT || 5000,
+-    DB_PASSWORD: process.env.DB_PASSWORD || 'pass'
++    DB_PASSWORD: process.env.DB_PASSWORD || 'pass',
++    MONGO_URL: process.env.MONGO_URL || 'mongodb://localhost:27017/project'
+ }
+\ No newline at end of file
+Index: controller/user.controller.js
+===================================================================
+diff --git a/controller/user.controller.js b/controller/user.controller.js
+--- a/controller/user.controller.js	
++++ b/controller/user.controller.js	
+@@ -1,10 +1,12 @@
+ const fs = require("fs/promises");
+ const path = require("path");
+ 
+-// const userDb = require('./dataBase/users')
++const User = require('../dataBase/User')
+ 
+ module.exports = {
+-    getAllUsers: async (req, res) => {
++    getAllUsers: async (req, res, next) => {
++
++
+         console.log('user endpoint')
+ 
+         const userDb = await fs.readFile(path.join('dataBase', 'users.json'))
+Index: .env
+===================================================================
+diff --git a/.env b/.env
+--- a/.env	
++++ b/.env	
+@@ -1,1 +1,2 @@
+-PORT=5000
+\ No newline at end of file
++PORT=5000
++MONGO_URL=mongodb://localhost:27017/june2022
+\ No newline at end of file
+Index: package.json
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	
++++ b/package.json	
+@@ -6,6 +6,7 @@
+   "version": "1.0",
+   "dependencies": {
+     "dotenv": "^16.0.3",
+-    "express": "^4.18.2"
++    "express": "^4.18.2",
++    "mongoose": "^6.7.3"
+   }
+ }
