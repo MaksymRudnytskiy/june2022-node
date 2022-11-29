@@ -1,47 +1,112 @@
 const express = require('express')
+const fs = require('fs/promises')
+const path = require('path')
+const {fileService} = require("./services");
 
-const userDb = require('./dataBase/users')
+// const userDb = require('./dataBase/users')
 
 const app = express()
 
 app.use(express.json())
-app.use(express.urlencoded({extended:true}))
+app.use(express.urlencoded({extended: true}))
 
-app.get('/users', (req, res)=>{
+app.get('/users', async (req, res) => {
     console.log('users endpoint')
 
-    res.json(userDb)
+    const users = await fileService.reader()
+    res.json(users)
 })
 
-app.get('/user/:userId',(req, res) => {
-
-    const {userId} = req.params
-
-    res.json(userDb[userId])
-})
-
-app.post('/users',(req, res) => {
+app.post('/users', async (req, res) => {
     const userInfo = req.body
 
-    userDb.push(userInfo)
+    if (userInfo.name.length < 3 || typeof userInfo.name !== 'string') {
+        return res.status(400).json('Wrong name')
+    }
+    if (userInfo.age < 0 || Number.isNaN(+userInfo.age)) {
+        return res.status(400).json('Wrong age')
+    }
 
-    res.status(201).json('created')
+    const users = await fileService.reader()
+
+    const newUser = {
+        name: userInfo.name,
+        age: userInfo.age,
+        id: users[users.length-1].id + 1
+    }
+    users.push(newUser)
+
+    await writer(users)
+
+    res.status(201).json(newUser)
 })
 
-app.put('/users/:userId', (req, res) => {
+app.get('/user/:userId', async (req, res) => {
+    const {userId} = req.params
+
+    const users = await fileService.reader()
+
+    const user = users.find((u) => u.id === +userId)
+
+    if (!user) {
+        return res.status(404).json(`User with id ${userId} not found`)
+    }
+
+    res.json(user)
+})
+
+app.put('/users/:userId', async (req, res) => {
 
     const newUserInfo = req.body
-    const userId = req.params.userId
+    const {userId} = req.params
 
-    userDb[userId] = newUserInfo
+    const users = await reader()
 
-    res.json('Updated')
+    const index = users.findIndex((u) => u.id === +userId)
+
+    if (index === -1) {
+        return res.status(404).json(`User with id ${userId} not found`)
+    }
+
+    users[index] = {...users[index], ...newUserInfo}
+
+    await fileService.writer(users)
+
+    res.status(201).json(users[index])
 })
 
-app.get('/',(req, res) => {
+app.delete('/users/:userId', async (req, res) => {
+    const {userId} = req.params
+
+    const users = await reader()
+
+    const index = users.findIndex((u) => u.id === +userId)
+
+    if (index === -1) {
+        return res.status(404).json(`User with id ${userId} not found`)
+    }
+
+    users.splice(index,1)
+
+    await fileService.writer(users)
+
+    res.sendStatus(204)
+})
+
+
+
+app.get('/', (req, res) => {
     res.json('Welcome')
 })
 
 app.listen(5000, () => {
     console.log('Server listen 5000')
 })
+
+// const reader = async () => {
+//     const buffer = await fs.readFile(path.join(__dirname, 'dataBase', 'users.json'))
+//     return JSON.parse(buffer.toString())
+// }
+// const writer = async (users) => {
+//     await fs.writeFile(path.join(__dirname, 'dataBase', 'users.json'), JSON.stringify(users))
+// }
