@@ -1,45 +1,59 @@
 const userDb = require("../dataBase/users");
+const fileService = require("../service/file.service");
+const {writer} = require("../service/file.service");
 
 module.exports = {
-    getAllUsers: (req, res, next)=>{
+    getAllUsers: async (req, res, next)=>{
         try {
-            console.log('users endpoint')
+            const users = await fileService.reader()
 
-            res.json(userDb)
+            res.json(users)
         }catch (e) {
             next(e)
         }
     },
 
-    getUserById: (req, res, next) => {
+    getUserById: async (req, res, next) => {
         try {
-            throw new Error('getUserById error')
             res.json(req.user)
         }catch (e) {
             next(e)
         }
     },
 
-    createUser: (req, res, next) => {
+    createUser: async (req, res, next) => {
         try {
             const userInfo = req.body
 
-            userDb.push(userInfo)
+            const users = await fileService.reader()
 
-            res.status(201).json('created')
+            const newUser = {
+                name: userInfo.name,
+                age: userInfo.age,
+                id: users[users.length-1].id + 1
+            }
+            users.push(newUser)
+
+            await writer(users)
+
+            res.status(201).json(newUser)
         }catch (e) {
             next(e)
         }
     },
 
-    updateUser: (req, res, next) => {
+    updateUser: async (req, res, next) => {
         try {
             const newUserInfo = req.body
-            const userId = req.params.userId
+            const {user, users} = req
 
-            userDb[userId] = newUserInfo
+            const index = users.findIndex((u)=>u.id === user.id)
 
-            res.json('Updated')
+            users[index] = {...users[index], ...newUserInfo}
+
+            await fileService.writer(users)
+
+            res.status(201).json(users[index])
         }catch (e) {
             next(e)
         }
