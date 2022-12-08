@@ -1,4 +1,3 @@
-const userDb = require("../dataBase/users");
 const fileService = require("../service/file.service");
 const {writer} = require("../service/file.service");
 
@@ -54,6 +53,21 @@ module.exports = {
             await fileService.writer(users)
 
             res.status(201).json(users[index])
+        }catch (e) {
+            next(e)
+        }
+    },
+    deleteUser: async (req, res, next) => {
+        try {
+            const {user, users} = req
+
+            const index = users.findIndex((u)=>u.id === user.id)
+
+            users.splice(index,1)
+
+            await fileService.writer(users)
+
+            res.sendStatus(204)
         }catch (e) {
             next(e)
         }

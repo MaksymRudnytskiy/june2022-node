@@ -24,14 +24,40 @@ module.exports = {
             next(e)
         }
     },
-    isBodyValid: (req, res, next) => {
+    isBodyValidCreate: (req, res, next) => {
         try {
             const {name, age} = req.body
-            if (name.length < 3 || typeof name !== 'string') {
-                return res.status(400).json('Wrong name')
+            if (!name || name.length < 3 || typeof name !== 'string') {
+                throw new ApiError('User not found', 400)
             }
-            if (age < 0 || Number.isNaN(+age)) {
-                return res.status(400).json('Wrong age')
+            if (!age || age < 0 || Number.isNaN(+age)) {
+                throw new ApiError('Wrong age', 400)
+            }
+            next()
+        }catch (e) {
+            next(e)
+        }
+    },
+    isBodyValidUpdate: (req, res, next) => {
+        try {
+            const {name, age} = req.body
+            if (name && (name.length < 3 || typeof name !== 'string')) {
+                throw new ApiError('User not found', 400)
+            }
+            if (age && (age < 0 || Number.isNaN(+age))) {
+                throw new ApiError('Wrong age', 400)
+            }
+            next()
+        }catch (e) {
+            next(e)
+        }
+    },
+    isIdValid: (req, res, next) => {
+        try {
+            const {userId} = req.params
+
+            if (userId < 0 || Number.isNaN(+userId)) {
+                throw new ApiError('Not valid ID', 400)
             }
             next()
         }catch (e) {
