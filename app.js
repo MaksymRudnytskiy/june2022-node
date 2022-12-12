@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 require('dotenv').config()
 
 const userDb = require('./dataBase/users')
@@ -23,6 +24,7 @@ app.use((err,req, res, next) => {
     })
 })
 
-app.listen(configs.PORT, () => {
+app.listen(configs.PORT, async () => {
+    await mongoose.connect(configs.MONGO_URL);
     console.log(`Server listen ${configs.PORT}`)
 })
