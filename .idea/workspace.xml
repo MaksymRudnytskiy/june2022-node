@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 5 ??">
-      <change afterPath="$PROJECT_DIR$/config/regexp.enum.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dataBase/OAuth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/oauth.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/common.validators.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/user.validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/auth.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware/auth.middleware.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/router/auth.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validator/auth.validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dataBase/OAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/OAuth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/user.middleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/router/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/user.router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/oauth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/oauth.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validator/user.validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validator/user.validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

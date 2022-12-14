@@ -17,7 +17,23 @@ module.exports = {
             req.user = user
 
             next()
-        }catch (e) {
+        } catch (e) {
+            next(e)
+        }
+    },
+
+    getUserDynamically: (fieldName, from = 'body', dbField = fieldName) => async (req, res, next) => {
+        try {
+            const fieldToSearch = req[from][fieldName]
+
+            const user = await User.findOne({[dbField]: fieldToSearch})
+
+            if (!user) {
+                throw new ApiError('User not found', 404)
+            }
+
+            next()
+        } catch (e) {
             next(e)
         }
     },
@@ -27,7 +43,7 @@ module.exports = {
             const {email} = req.body
 
             if (!email) {
-                throw new ApiError('Email not present',400)
+                throw new ApiError('Email not present', 400)
             }
 
             const user = await User.findOne({email})
@@ -37,56 +53,56 @@ module.exports = {
             }
 
             next()
-        }catch (e) {
+        } catch (e) {
             next(e)
         }
     },
 
-    isNewUserValid: async (req, res, next) =>{
+    isNewUserValid: async (req, res, next) => {
         try {
             const validate = userValidator.newUserValidator.validate(req.body);
 
-            if (validate.error){
+            if (validate.error) {
                 throw new ApiError(validate.error.message, 400)
             }
 
             req.body = validate.value
 
             next()
-        }catch (e) {
+        } catch (e) {
             next(e)
         }
     },
 
-    isEditUserValid: async (req, res, next) =>{
+    isEditUserValid: async (req, res, next) => {
         try {
             const validate = userValidator.editUserValidator.validate(req.body);
 
-            if (validate.error){
+            if (validate.error) {
                 throw new ApiError(validate.error.message, 400)
             }
 
             req.body = validate.value
 
             next()
-        }catch (e) {
+        } catch (e) {
             next(e)
         }
     },
 
-    isUserIdValid: async (req, res, next) =>{
+    isUserIdValid: async (req, res, next) => {
         try {
 
-            const {userId}= req.params
+            const {userId} = req.params
 
             const validate = commonValidator.idValidator.validate(userId);
 
-            if (validate.error){
+            if (validate.error) {
                 throw new ApiError(validate.error.message, 400)
             }
 
             next()
-        }catch (e) {
+        } catch (e) {
             next(e)
         }
     }

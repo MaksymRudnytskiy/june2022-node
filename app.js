@@ -4,6 +4,7 @@ require('dotenv').config()
 
 const userDb = require('./dataBase/users')
 const userRouter = require('./router/user.router')
+const authRouter = require('./router/auth.router')
 const configs = require('./config/config')
 
 const app = express()
@@ -11,6 +12,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
+app.use('/auth', authRouter)
 app.use('/users', userRouter)
 
 app.get('/',(req, res) => {
