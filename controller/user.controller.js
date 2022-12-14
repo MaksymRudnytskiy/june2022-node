@@ -4,7 +4,7 @@ const {userService} = require("../service");
 module.exports = {
     getAllUsers: async (req, res, next)=>{
         try {
-            const users = await userService.findByParams({})
+            const users = await User.find({})
 
             res.json(users)
         }catch (e) {
