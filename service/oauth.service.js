@@ -21,5 +21,14 @@ module.exports = {
         return{
             accessToken, refreshToken
         }
-    }
+    },
+
+    checkToken: (token = '', tokenType = 'accessToken') => {
+        const accessToken = jwt.sign(dataToSign, 'passwordAccess', {expiresIn: '15m'})
+        const refreshToken = jwt.sign(dataToSign, 'passwordRefresh', {expiresIn: '30d'})
+
+        return{
+            accessToken, refreshToken
+        }
+    },
 }

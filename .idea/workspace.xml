@@ -4,22 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 5 ??">
-      <change afterPath="$PROJECT_DIR$/controller/auth.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/middleware/auth.middleware.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/router/auth.router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validator/auth.validator.js" afterDir="false" />
+    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 4 hm cars">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dataBase/OAuth.js" beforeDir="false" afterPath="$PROJECT_DIR$/dataBase/OAuth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/user.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/user.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/oauth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/oauth.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validator/user.validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/validator/user.validator.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,6 +79,7 @@
       <workItem from="1670607865569" duration="626000" />
       <workItem from="1670699225758" duration="1270000" />
       <workItem from="1671003275961" duration="435000" />
+      <workItem from="1671037415462" duration="928000" />
     </task>
     <task id="LOCAL-00001" summary="lesson 2 start">
       <created>1668875097512</created>
@@ -127,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671003713255</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="homework 4 hm cars">
+      <created>1671031858625</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1671031858625</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +146,7 @@
     <MESSAGE value="homework 3 redone homework" />
     <MESSAGE value="homework 3 redone homework 1" />
     <MESSAGE value="homework 5 ??" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 5 ??" />
+    <MESSAGE value="homework 4 hm cars" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 4 hm cars" />
   </component>
 </project>
