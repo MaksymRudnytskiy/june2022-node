@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 const ApiError = require("../error/ApiError");
+const {ACCESS_SECRET, REFRESH_SECRET} = require("../config/config");
 
 module.exports = {
     hashPassword: (password) => bcrypt.hash(password, 10),
@@ -15,8 +16,8 @@ module.exports = {
     },
 
     generateAccessTokenPair: (dataToSign = {}) => {
-        const accessToken = jwt.sign(dataToSign, 'password', {expiresIn: '15m'})
-        const refreshToken = jwt.sign(dataToSign, 'passwordRefresh', {expiresIn: '30d'})
+        const accessToken = jwt.sign(dataToSign, ACCESS_SECRET, {expiresIn: '15m'})
+        const refreshToken = jwt.sign(dataToSign, REFRESH_SECRET, {expiresIn: '30d'})
 
         return{
             accessToken, refreshToken
@@ -24,11 +25,14 @@ module.exports = {
     },
 
     checkToken: (token = '', tokenType = 'accessToken') => {
-        const accessToken = jwt.sign(dataToSign, 'passwordAccess', {expiresIn: '15m'})
-        const refreshToken = jwt.sign(dataToSign, 'passwordRefresh', {expiresIn: '30d'})
+        try {
+            let secret = ''
 
-        return{
-            accessToken, refreshToken
+            if (tokenType === "accessToken") secret = ACCESS_SECRET
+            if (tokenType === "refreshToken") secret = REFRESH_SECRET
+            return jwt.verify(token, secret)
+        } catch (e) {
+            throw new ApiError('Token not valid', 401)
         }
     },
 }
