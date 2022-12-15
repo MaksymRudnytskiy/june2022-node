@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 5 hw not done" />
+    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 6">
+      <change afterPath="$PROJECT_DIR$/enum/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/enum/tokenType.enum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/auth.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/auth.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/auth.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/auth.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/router/user.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/router/user.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/oauth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/oauth.service.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
