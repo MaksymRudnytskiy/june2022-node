@@ -6,4 +6,7 @@ const userMdlwr = require("../middleware/user.middleware");
 
 router.post('/login', mdlwr.isBodyValid, userMdlwr.getUserDynamically('email'), controller.login)
 
+router.post('/password/forgot', userMdlwr.getUserDynamically('email'), controller.forgotPassword)
+
+
 module.exports = router
