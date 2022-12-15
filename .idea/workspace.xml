@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 4 hm cars">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/regexp.enum.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/regexp.enum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/auth.middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth.middleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/oauth.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/service/oauth.service.js" afterDir="false" />
-    </list>
+    <list default="true" id="3cf9f495-edf3-4b45-bd5d-4a90d24c2f01" name="Changes" comment="homework 5 hw not done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -124,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671031858625</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="homework 5 hw not done">
+      <created>1671048842132</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671048842132</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +150,8 @@
     <MESSAGE value="homework 3 redone homework 1" />
     <MESSAGE value="homework 5 ??" />
     <MESSAGE value="homework 4 hm cars" />
-    <option name="LAST_COMMIT_MESSAGE" value="homework 4 hm cars" />
+    <MESSAGE value="homework 5 hw not done" />
+    <option name="LAST_COMMIT_MESSAGE" value="homework 5 hw not done" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
